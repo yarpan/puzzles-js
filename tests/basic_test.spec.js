@@ -7,6 +7,7 @@ test("test_1", async({page}) =>{
     expect(url).toBe('https://the-internet.herokuapp.com/abtest')
 })
 
+
 test("test_2", async({page}) =>{
     await page.goto('https://the-internet.herokuapp.com/')
     await page.click('#content>ul>li:nth-child(1)>a')
