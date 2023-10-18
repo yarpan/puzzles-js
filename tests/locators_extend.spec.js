@@ -43,7 +43,12 @@ test('multiple match css', async ({page}) => {
 })
 
 
-
+test('multiple match xpath', async ({page}) => {
+    await page.goto(uriBase);
+    const myLocator = page.locator("//*[@class='some_locator_1']|//*[@class='some_locator_2']|//a[@href='/abtest']");
+    await myLocator.click();
+    expect(page.url()).toBe(uriAbTest);
+})
 
 
 
