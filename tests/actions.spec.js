@@ -1,3 +1,11 @@
+// 1. Enter text into text field
+// 2. Get element text
+// 3. Click element
+// 4. Check checkbox or radio button
+// 5. Select option from a drop-down
+// 6. Check if element is checked
+// 7. Check if element is visible
+
 const {test, expect} = require("@playwright/test");
 
 const uriBase = 'https://the-internet.herokuapp.com';
@@ -49,4 +57,18 @@ test('select from drop-down', async ({page}) => {
     await dropdown.selectOption("1");                   //by value
     await dropdown.selectOption({label: "Option 2"});   //by text
     await dropdown.selectOption({index: 1});            //by index 
+})
+
+
+
+test('is element visible', async ({page}) => {
+    await page.goto('https://www.mortgagecalculator.org');
+    const hiddenElement = page.locator('#colorbox>div:nth-child(2)');
+    const isVisible1 = await hiddenElement.isVisible();
+
+    const radio = page.locator('//input[@value="percent"]');
+    const isVisible2 = await radio.isVisible();
+
+    expect(isVisible1).toBe(false);
+    expect(isVisible2).toBe(true);
 })
