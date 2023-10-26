@@ -32,20 +32,21 @@ test('radiobutton', async ({page}) => {
     await page.goto('https://www.mortgagecalculator.org');
     const radio = page.locator('//input[@value="percent"]'); // css = input[value='percent']
 
+    const isChecked1 = await radio.isChecked();
     await radio.check();
+    const isChecked2 = await radio.isChecked();
 
-
+    expect(isChecked1).toBe(false);
+    expect(isChecked2).toBe(true);
 })
 
 
-test('dropdown', async ({page}) => {
+
+test('select from drop-down', async ({page}) => {
     await page.goto(uriBase + '/dropdown');
     const dropdown = page.locator('#dropdown'); 
 
-    await dropdown.selectOption("1");
-
-    await dropdown.selectOption({label: "Option 2"});
-
-    await dropdown.selectOption({index: 1});
-
+    await dropdown.selectOption("1");                   //by value
+    await dropdown.selectOption({label: "Option 2"});   //by text
+    await dropdown.selectOption({index: 1});            //by index 
 })
