@@ -30,8 +30,14 @@ test('checkbox', async ({page}) => {
     await page.goto(uriBase + '/checkboxes');
     const checkbox = page.locator('#checkboxes>input:nth-child(1)');
 
+    await expect(checkbox).toBeChecked({checked: false});   // assertion element is checked
+    
     await checkbox.check();
+    await expect(checkbox).toBeChecked();                   // assertion element is checked
+
     await checkbox.uncheck();
+    const isChecked = await checkbox.isChecked();
+    expect(isChecked).toBe(false);                          // assertion expect
 
 })
 
@@ -54,11 +60,13 @@ test('select from drop-down', async ({page}) => {
     await page.goto(uriBase + '/dropdown');
     const dropdown = page.locator('#dropdown'); 
 
-    await dropdown.selectOption("1");                   //by value
-    await dropdown.selectOption({label: "Option 2"});   //by text
-    await dropdown.selectOption({index: 1});            //by index 
-})
+    await dropdown.selectOption("1");                   //locate by value
+    await dropdown.selectOption({label: "Option 2"});   //locate by text
+    await dropdown.selectOption({index: 1});            //locate by index 
 
+    await expect(dropdown).toHaveValue('1');            //assertion to have value
+
+})
 
 
 test('is element visible', async ({page}) => {
