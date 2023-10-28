@@ -1,5 +1,5 @@
 const {test, expect} = require("@playwright/test");
-const { chmod } = require("fs");
+//const { chmod } = require("fs");
 
 const uriBase = 'https://the-internet.herokuapp.com/'
 const uriAbTest = 'https://the-internet.herokuapp.com/abtest'
@@ -48,5 +48,5 @@ test.only('fill the text and click button', async ({page}) => {
     await loginButton.click();
     //await loginButton.click({force:true});                    //no wait until element actionability
 
-    expect(page.url()).toBe(uriBase + '/secure');
+    expect(await page.url()).toBe(uriBase + 'secure');
 })
