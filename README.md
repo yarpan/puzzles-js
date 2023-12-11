@@ -1,7 +1,7 @@
 
 **NAME:** Sample Playwright JS
 
-**TYPE:** Sample Project for mentoring and training
+**TYPE:** Sample Project for educational purpose
 
 **STATUS:** In Progres ...
 
