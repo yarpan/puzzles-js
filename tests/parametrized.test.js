@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-const people = ['Kumar', 'Panos', 'Rahit'];
+const people = ['Kumar', 'Ragul', 'Panos', 'Rahit'];
 for (const name of people) {
   test(`testing with ${name}`, async () => {
     // ...
