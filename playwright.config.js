@@ -11,6 +11,10 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  // Glob patterns or regular expressions to ignore test files.
+  // testIgnore: '*test-assets',
+  // Glob patterns or regular expressions that match test files.
+  // testMatch: '*todo-tests/*.spec.ts',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false, //true,

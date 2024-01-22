@@ -12,7 +12,7 @@
 // element has class
 // count of elements found
 
-//negating assertions
+// negating assertions
 // soft assertions
 
 
