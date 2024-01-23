@@ -12,7 +12,7 @@ test("get all users", async ({ request }) => {
     expect(responseRaw.status()).toBe(200);
     expect(responseRaw.statusText()).toBe('OK');
     const responseJson = await responseRaw.json();
-
+    console.log(responseJson);
 
 });
 
@@ -28,17 +28,30 @@ test("create new user", async ({ request }) => {
     });
 
     expect(responseRaw.status()).toBe(201);
-    expect(responseRaw.statusText()).toBe('OK');
+    expect(responseRaw.statusText()).toBe('Created');
     const responseJson = await responseRaw.json();
+    console.log(responseJson);
+
 });
 
 test("update user", async ({ request }) => {
     const ENDPOINT = '/api/users/2';
-
+    const userEmail = faker.internet.email();
+    const responseRaw = await request.put(BASE_URL + ENDPOINT, {
+        data: {
+            "name": "morpheus",
+            "job": "resident",
+            "email": userEmail
+        }
+    });
 
     expect(responseRaw.status()).toBe(200);
     expect(responseRaw.statusText()).toBe('OK');
     const responseJson = await responseRaw.json();
+    console.log('userEmail: ' + userEmail);
+    console.log(responseJson);
+
+
 });
 
 test("patch user", async ({ request }) => {
@@ -48,6 +61,8 @@ test("patch user", async ({ request }) => {
     expect(responseRaw.status()).toBe(200);
     expect(responseRaw.statusText()).toBe('OK');
     const responseJson = await responseRaw.json();
+
+
 });
 
 test("delete user", async ({ request }) => {
@@ -56,7 +71,9 @@ test("delete user", async ({ request }) => {
     expect(responseRaw.status()).toBe(200);
     expect(responseRaw.statusText()).toBe('OK');
     const responseJson = await responseRaw.json();
- });
+
+
+});
 
 
 
@@ -83,7 +100,7 @@ function createRandomUser() {
 
 
     test("create new user2", async ({ request }) => {
-    
+
         const responseBody = await response.json();
         expect(responseBody["id"]).toBeDefined();
         expect(responseBody["createdAt"]).toBeDefined();
@@ -93,15 +110,15 @@ function createRandomUser() {
     });
 
     test("get all users2", async ({ request }) => {
-    
+
         const responseJson = await responseRaw.json();
-    
+
         expect(responseJson["page"]).toBe(2);
         expect(responseJson["per_page"]).toBe(6);
         expect(responseJson["total"]).toBe(12);
         expect(responseJson["total_pages"]).toBe(2);
         expect(responseJson["data"].length).toBe(6);
-    
+
         expect(responseJson["data"]).toContainEqual(
             expect.objectContaining({
                 id: 7,
