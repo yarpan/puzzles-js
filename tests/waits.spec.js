@@ -20,6 +20,12 @@ test('wait for network idle', async ({page}) => {
     // (method) Page.waitForLoadState(state?: "load" | "domcontentloaded" | "networkidle" |
     //  options?: {   timeout?: number | undefined;
 
+    // 5000
+    await orederSent.waitFor({timeout: 15000});
+
+    // timeout *3
+    test.setTimeout(90000);
+    test.slow();
 })
 
 
