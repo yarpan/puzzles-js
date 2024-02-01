@@ -24,7 +24,7 @@ test("get all users", async ({ request }) => {
             avatar: "https://reqres.in/img/faces/7-image.jpg",
         })
     );
-    console.log(responseJson);
+    //console.log(responseJson);
 });
 
 test("create new user", async ({ request }) => {
@@ -46,7 +46,7 @@ test("create new user", async ({ request }) => {
     expect(responseJson.email).toBe(userEmail);
     expect(responseJson.id).toBeDefined();
     expect(responseJson.createdAt).toBeDefined();
-    console.log(responseJson);
+    //console.log(responseJson);
 });
 
 test("update user", async ({ request }) => {
@@ -67,7 +67,7 @@ test("update user", async ({ request }) => {
     expect(responseJson.job).toBe("resident");
     expect(responseJson.email).toBe(userEmail);
     expect(responseJson.updatedAt).toBeDefined();
-    console.log(responseJson);
+    //console.log(responseJson);
 });
 
 test("patch user", async ({ request }) => {
@@ -84,7 +84,7 @@ test("patch user", async ({ request }) => {
     expect(responseRaw.statusText()).toBe('OK');
     expect(responseJson.job).toBe("member");
     expect(responseJson.updatedAt).toBeDefined();
-    console.log(responseJson);
+    //console.log(responseJson);
 });
 
 test("delete user", async ({ request }) => {
