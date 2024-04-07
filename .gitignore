@@ -1,5 +1,7 @@
-node_modules/
-/test-results/
-/playwright-report/
+.vscode/
+/node_modules/
+/blob-report/
 /playwright/.cache/
+/playwright-report/
+/test-results/
 /unstaged/
