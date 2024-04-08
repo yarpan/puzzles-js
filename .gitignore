@@ -5,3 +5,7 @@
 /playwright-report/
 /test-results/
 /unstaged/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

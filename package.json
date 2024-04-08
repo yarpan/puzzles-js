@@ -1,8 +1,9 @@
 {
-  "name": "pw2",
+  "name": "puzzles",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "scripts": {
     "test": "npx playwright test --reporter=html",
     "report": "npx playwright show-report"
@@ -11,8 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@faker-js/faker": "^8.3.1",
-    "@playwright/test": "^1.38.1",
-    "@types/node": "^20.8.3"
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.5"
   }
 }
