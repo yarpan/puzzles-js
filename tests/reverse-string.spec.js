@@ -19,7 +19,6 @@ test.describe("Reverse String test", () => {
  * @return {void} Do not return anything, modify s in-place instead.
  */
 var reverseString = function(s) {
-    let len = s.length;
     let output = [];
     for(let i=0; i<s.length; i++){
        output.push(s[s.length-i-1]);
