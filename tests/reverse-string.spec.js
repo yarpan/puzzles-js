@@ -1,3 +1,7 @@
+// Source:
+// Reverse String
+// https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/879/
+
 import { test, expect } from '@playwright/test';
 
 const testData = [
@@ -25,7 +29,3 @@ var reverseString = function(s) {
     }
     return output;
 };
-
-// Source:
-// Reverse String
-// https://leetcode.com/explore/featured/card/top-interview-questions-easy/127/strings/879/

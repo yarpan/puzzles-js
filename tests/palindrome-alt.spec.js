@@ -22,13 +22,8 @@ test.describe("Palindrome test", () => {
 });
 
 function palindrome(str) {
-    var re = /[^A-Za-z0-9]/g;
-    str = str.toLowerCase().replace(re, '');
-    var len = str.length;
-    for (var i = 0; i < len / 2; i++) {
-        if (str.charAt(i) != (str.charAt(len - 1 - i))) {
-            return false;
-        }
-    }
-    return true;
-}
+    var re = /[\W_]/g;
+    var lowRegStr = str.toLowerCase().replace(re, '');
+    var reverseStr = lowRegStr.split('').reverse().join(''); 
+    return reverseStr === lowRegStr;
+  }
