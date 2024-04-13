@@ -3,14 +3,15 @@
 // but here’s the catch, multiple of three should print “Fizz” and similarly print “Buzz” for multiples of 5 
 // and lastly print “FizzBuzz” for multiples of three and five.
 
-function fizzBuzzFunction(value) {
+i = fizzBuzzFunction(100)
 
+function fizzBuzzFunction(value) {
     for (let i = 1; i <= value; i++) {
         let isDevidable3 = (i % 3 == 0);
         let isDevidable5 = (i % 5 == 0);
 
         if (isDevidable3 && isDevidable5) {
-            console.log(i + " FizzBuzz")
+            console.log(i + " Fizz Buzz")
         } else if (isDevidable3) {
             console.log(i + " Fizz")
         } else if (isDevidable5) {
@@ -20,5 +21,3 @@ function fizzBuzzFunction(value) {
         }
     }
 }
-
-i = fizzBuzzFunction(100)
