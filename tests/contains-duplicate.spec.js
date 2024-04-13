@@ -1,3 +1,7 @@
+// Source:
+// Contains Duplicate
+// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/578/
+
 import { test, expect } from '@playwright/test';
 
 const testData = [
@@ -31,7 +35,3 @@ var containsDuplicate = function (nums) {
     }
     return false;
 };
-
-// Source:
-// Contains Duplicate
-// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/578/
