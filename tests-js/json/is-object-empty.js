@@ -1,4 +1,4 @@
-//Source: 
+//Source: https://leetcode.com/problems/is-object-empty
 // 2727. Is Object Empty
 // Given an object or an array, return if it is empty.
 // An empty object contains no key-value pairs.
